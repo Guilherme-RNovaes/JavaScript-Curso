@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        body{
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            color: white;
+        }
+        .principal{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-color: rgb(56, 56, 100);
+            max-width: 500px;
+            max-height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 15px;
+            margin-top: 50px;
+            padding: 30px 0 50px 0;
+        }
+
+        .itens {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pais{
+            width: 100px;
+            height: 20px;
+            margin-left: 35px;
+            margin-right: 5px;
+        }
+        
+        .button{
+            width: 70px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="principal">
+        <h1>Tu é gringo?</h1>
+        <div class="itens">
+            <p>Qual o seu País?</p>
+            <input type="text" name="pais" id="pais" class="pais">
+            <input type="button" value="Verificar" class="button" onclick="calcular()">
+        </div>
+        <div id="res">
+
+        </div>
+    </div>
+    <script>
+        function calcular() {
+            var spais = document.getElementById('pais')
+            var res = document.querySelector('div#res')
+            var epais = (spais.value)
+            if (epais == 'Brasil' || epais == 'brasil') {
+                res.innerHTML = `<p>Você é Brasileiro, porra!!</p>`
+            } else {
+                res.innerHTML = `<p>Vixi, tu é gringo >.></p>`
+            }
+        }
+    </script>
+</body>
+</html>
